@@ -1,0 +1,30 @@
+<form [formGroup]='lform'>
+        <!-- Id:
+        <input formControlName='id'><br> -->
+    Firstname:
+    <input formControlName='fname'><br>
+    Lastname:
+    <input formControlName='lname'><br>
+    <button (click)='pos()'>Submit</button>&nbsp;
+    <button (click)='put()'>Update</button>
+</form>
+<table border>
+    <tr>
+        <th>Sl.no</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor='let m of data,let i=index'>
+            <td>{{i+1}}</td>
+            <td>{{m.fname}}</td>
+            <td>{{m.lname}}</td>
+            <td>   <button (click)='ed(m)'>Edit</button>&nbsp;
+                <button (click)='del(m)'>Delete</button>
+            </td>
+        </tr>
+</table>
+
+
+
+<router-outlet></router-outlet>
